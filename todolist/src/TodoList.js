@@ -7,7 +7,10 @@ class TodoList extends Component{
       this.state = {
           inputVal: '',
           list: []
-      }
+      };
+      this.handleInputChange = this.handleInputChange.bind(this);
+      this.hanldeDeleteItem = this.hanldeDeleteItem.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInputChange(e){
     const value = e.target.value;
@@ -37,7 +40,7 @@ class TodoList extends Component{
     return (
       this.state.list.map((item, index) => {
         return (
-            <TodoItem key={index} content={item} index={index} deleteItem={this.hanldeDeleteItem.bind(this)}/>
+            <TodoItem key={index} content={item} index={index} deleteItem={this.hanldeDeleteItem}/>
         )
       })
     )
@@ -47,8 +50,8 @@ class TodoList extends Component{
             <Fragment>
                 <div>
                     <label htmlFor="inputVal">输入内容</label>
-                    <input id="inputVal" className="input" value={this.state.inputVal} onChange={this.handleInputChange.bind(this)}/>
-                    <button onClick={this.handleSubmit.bind(this)}>提交</button>
+                    <input id="inputVal" className="input" value={this.state.inputVal} onChange={this.handleInputChange}/>
+                    <button onClick={this.handleSubmit}>提交</button>
                 </div>
                 <ul>
                     {

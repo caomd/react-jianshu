@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {  } from 'react';
 import { List, Input, Button } from 'antd';
 
 //无状态组件
